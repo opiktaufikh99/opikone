@@ -508,7 +508,7 @@
 <div id="bgCbi" class="bg-black opacity-95 overflow-x-scroll  fixed w-full h-full hidden top-0 left-0  z-[1002]">
     <div  id="modalCbi" class="  mt-20 mx-auto bg-white rounded-lg p-5 w-full   absolute  "style="z-index: 1003;">
         <div id="close" type="button" class="bg-red-500 w-6  animate-ping absolute top-0 right-1 rounded-full  ">
-            <div id="closeCbi" class="sticky mx-auto text-center cursor-pointer font-bold ">X</div>
+            <div id="closeCbi" class="sticky mx-auto text-center cursor-pointer font-bold ml-3">X</div>
         </div>
         <div id="modalCbi" class="container">
             <div class="flex justify-between">
@@ -601,10 +601,10 @@
 </div>
 <!-- end modal dialog cbi -->
 <section class="w-full h-[550px] bg-black flex items-center justify-center text-white">
-    <div class="w-[420px] bg-abu lg:w-[900px] rounded-lg h-96 mt-8 mb-8 md:w-[620px]" >
+    <div class="w-[320px]  bg-abu lg:w-[900px] rounded-lg h-96 mt-8 mb-8 md:w-[620px]" >
     <form name="catatan">
     <h1 class="text-center pt-4 font-bold text-yellow-300 text-xl shadow-xl">Pesan</h1>
-    <div class="flex mx-auto justify-center items-center ">
+    <div class=" flex mx-auto justify-center items-center ">
         <div class="m-2 focus-within:border-blue-400 ">
             <input type="email" name="email" class=" border-b-2 bg-transparent ml-8 focus:outline-none lg:w-64 placeholder:text-center" placeholder="email">
         </div>
@@ -635,7 +635,7 @@
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {  
             form.reset();
-            console.log('Success!', response)
+            console.log('Success!', response);
         
     })
         .catch(error => console.error('Error!', error.message))
