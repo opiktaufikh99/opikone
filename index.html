@@ -600,14 +600,43 @@
             </div>
 </div>
 <!-- end modal dialog cbi -->
+<section class="w-full h-[550px] bg-black flex items-center justify-center text-white">
+    <div class="w-[420px] bg-abu lg:w-[900px] rounded-lg h-96 mt-8 mb-8 md:w-[620px]" >
+    <form name="catatan">
+    <h1 class="text-center pt-4 font-bold text-yellow-300 text-xl shadow-xl">Pesan</h1>
+    <div class="flex mx-auto justify-center items-center ">
+        <div class="m-2 focus-within:border-blue-400 ">
+            <input type="email" name="email" class=" border-b-2 bg-transparent ml-8 focus:outline-none lg:w-64 placeholder:text-center" placeholder="email">
+        </div>
+        <div class="m-2">
+            <input type="text" name="nama" class=" border-b-2 bg-transparent mr-8 focus:outline-none lg:w-64 placeholder:text-center" placeholder="nama">
+        </div>
+    </div>
+    <div class="mx-auto flex justify-center items-center rounded-2xl mt-4 text-drak">
+        <textarea placeholder="pesan " name="pesan" id="" cols="50" rows="9" class="rounded-xl lg:w-[730px] w-[380px] placeholder:text-center placeholder:mt-9 "></textarea>
+    </div>
+    <div class="flex justify-center items-center mt-4">
+        <button type="submit" class="w-28 h-10 bg-gray-400 rounded-lg px-auto mb-2">Kirim</button>
+    </div>
+</form>
+</div>
+</section>
 <footer>
     <div class="w-full h-28 bg-slate-500 grid grid-cols-4 gap-3  items-center  ">
-        <div class="w-36 bg-slate-50"></div>
-        <div class="w-36 bg-slate-50"></div>
-        <div class="w-36 bg-slate-50"></div>
-        <div class="w-36 bg-slate-50"></div>
+        
     </div>
 </footer>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxTmUs9WdgtDzfxOXSmmQ5KrqiELZ9mhJXzm6lQNBDyMkpJEDJYb-fRZewubbNR0vnN/exec'
+    const form = document.forms['catatan']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
     <script src="./dist/js/script.js"></script>
 </body>
 </html>
